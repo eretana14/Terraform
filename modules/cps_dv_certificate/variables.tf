@@ -9,10 +9,10 @@ variable "config_section" {
 }
 
 variable "sans_cps_dv" {
-  type = list(string)
+  type        = list(string)
   description = "SAN domain associated with the certificate"
 }
 
 variable "contract_id" {
-  type        = string
+  type = string
 }

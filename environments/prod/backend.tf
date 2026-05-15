@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
     bucket = "eretana-terraform"
-    key    = "prod/terraform.tfstate" 
+    key    = "prod/terraform.tfstate"
     region = "us-east-1"
 
     endpoints = {

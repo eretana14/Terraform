@@ -2,7 +2,7 @@
 # This only creates records for SANs that Akamai identifies as needing validation.
 resource "akamai_dns_record" "cps_dns_challenges" {
   for_each = {
-    for d in akamai_cps_dv_enrollment.enrollment_id_302868.dns_challenges : 
+    for d in akamai_cps_dv_enrollment.enrollment_id_302868.dns_challenges :
     d.domain => d
   }
 
@@ -20,7 +20,7 @@ resource "akamai_dns_record" "cps_dns_challenges" {
 # This prevents CPS from checking the record before it exists everywhere.
 resource "time_sleep" "wait_for_cps_dns" {
   depends_on = [akamai_dns_record.cps_dns_challenges]
-  
+
   # 60 seconds is the sweet spot for Edge DNS propagation
   create_duration = "360s"
 }
@@ -30,7 +30,7 @@ resource "time_sleep" "wait_for_cps_dns" {
 resource "akamai_cps_dv_validation" "cps_validation" {
   enrollment_id = akamai_cps_dv_enrollment.enrollment_id_302868.id
   sans          = akamai_cps_dv_enrollment.enrollment_id_302868.sans
-  
+
   # This dependency ensures the records are live and propagated first
   depends_on = [time_sleep.wait_for_cps_dns]
 }

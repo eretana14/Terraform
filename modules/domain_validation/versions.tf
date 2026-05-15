@@ -5,10 +5,10 @@ terraform {
       version = ">= 10.1.0"
     }
     time = {
-  source  = "hashicorp/time"
-  version = ">= 0.9.0"
-}
+      source  = "hashicorp/time"
+      version = ">= 0.9.0"
+    }
   }
-  
+
   required_version = ">= 1.0"
 }

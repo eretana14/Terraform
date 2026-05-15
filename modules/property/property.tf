@@ -1,6 +1,6 @@
 resource "akamai_edge_hostname" "edge_hostnames" {
-  for_each      = var.edge_hostnames
-    
+  for_each = var.edge_hostnames
+
   provider      = akamai
   contract_id   = var.contract_id
   group_id      = var.group_id

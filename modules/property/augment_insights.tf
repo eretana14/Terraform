@@ -28,7 +28,7 @@ data "akamai_property_rules_builder" "eretana-terraform_rule_traffic_reporting" 
           }
           created_date = 1776446738000
           description  = "eretana-terraform"
-          id           =var.traffic_reporting_cp_code_id
+          id           = var.traffic_reporting_cp_code_id
           name         = "eretana-terraform"
           products     = ["Fresca", ]
         }

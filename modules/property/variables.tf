@@ -61,7 +61,7 @@ variable "property_config" {
 # Property Version Notes
 variable "version_notes" {
   description = "Property version notes"
-  type = string
+  type        = string
 }
 
 # Property Hostnames

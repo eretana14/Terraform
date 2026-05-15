@@ -14,11 +14,11 @@ data "akamai_appsec_configuration" "config_refresh" {
 
 # 2. The Activation Resource
 resource "akamai_appsec_activations" "security_staging_activation" {
-  config_id           = akamai_appsec_configuration.security_configuration.config_id
-  
+  config_id = akamai_appsec_configuration.security_configuration.config_id
+
   # We use the latest_version from the data source we just refreshed
-  version             = data.akamai_appsec_configuration.config_refresh.latest_version
-  
+  version = data.akamai_appsec_configuration.config_refresh.latest_version
+
   network             = "STAGING"
   note                = var.sec_activation_notes
   notification_emails = var.sec_activation_contacts

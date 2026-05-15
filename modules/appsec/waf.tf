@@ -92,10 +92,10 @@ resource "akamai_appsec_attack_group" "waf_groups" {
 
   config_id          = akamai_appsec_configuration.security_configuration.config_id
   security_policy_id = akamai_appsec_security_policy.security-policy.security_policy_id
-  
+
   # The 'key' will be the Short Name (CMD, SQL, etc.)
-  attack_group       = each.key
-  
+  attack_group = each.key
+
   # The 'action' will come from your tfvars
   attack_group_action = each.value.action
 }
