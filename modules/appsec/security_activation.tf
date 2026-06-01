@@ -32,6 +32,11 @@ resource "akamai_appsec_activations" "security_staging_activation" {
   ]
 }
 
+# 3 Version Notes
+resource "akamai_appsec_version_notes" "my_version_notes" {
+  config_id     = akamai_appsec_configuration.security_configuration.config_id
+  version_notes = var.sec_activation_notes
+}
 
 
 
