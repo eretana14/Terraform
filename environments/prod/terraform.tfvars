@@ -66,18 +66,18 @@ sec_activation_contacts = [
   "eretana@akamai.com"
 ]
 
-sec_activation_notes = "config changes"
+sec_activation_notes = "bot transparent detections set to deny"
 
 bot_transparent_detections = {
-  "Impersonators of Known Bots"             = { action = "monitor" }
-  "Development Frameworks"                  = { action = "monitor" }
-  "HTTP Libraries"                          = { action = "monitor" }
-  "Web Services Libraries"                  = { action = "monitor" }
-  "Open Source Crawlers/Scraping Platforms" = { action = "monitor" }
-  "Headless Browsers/Automation Tools"      = { action = "monitor" }
-  "Declared Bots (Keyword Match)"           = { action = "monitor" }
-  "Aggressive Web Crawlers"                 = { action = "monitor" }
-  "Browser Impersonator"                    = { action = "monitor" }
+  "Impersonators of Known Bots"             = { action = "deny" }
+  "Development Frameworks"                  = { action = "deny" }
+  "HTTP Libraries"                          = { action = "deny" }
+  "Web Services Libraries"                  = { action = "deny" }
+  "Open Source Crawlers/Scraping Platforms" = { action = "deny" }
+  "Headless Browsers/Automation Tools"      = { action = "deny" }
+  "Declared Bots (Keyword Match)"           = { action = "deny" }
+  "Aggressive Web Crawlers"                 = { action = "deny" }
+  "Browser Impersonator"                    = { action = "deny" }
 }
 
 akamai_bot_categories = {
